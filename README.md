@@ -17,7 +17,7 @@ The Windows box you can RDP to, the linux machines you can ssh to like: `ssh ec2
 
 
 ## TODO
-- [ ] Another VPC with a machine in it that auths over a peer to the AD
+- [x] Another VPC with a machine in it that auths over a peer to the AD
 - [x] RHEL machine auto provisioning
 - [x] Ubuntu machine auto provisioning
 - [ ] Make a module to a lot of this heavy lifting and reference it here

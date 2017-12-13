@@ -5,6 +5,7 @@ output "Directory Services" {
 output "Windows 2012r2 Address" {
   value = "${aws_instance.vm_adwriter.public_dns}"
 }
+
 output "Red Hat Address" {
   value = "${aws_instance.rhel.public_dns}"
 }

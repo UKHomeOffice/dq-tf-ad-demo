@@ -2,7 +2,7 @@ resource "aws_ssm_document" "myapp_dir_default_doc" {
   name          = "myapp_dir_default_doc"
   document_type = "Command"
 
-  content       = <<DOC
+  content = <<DOC
 {
         "schemaVersion": "1.0",
         "description": "Join an instance to a domain",

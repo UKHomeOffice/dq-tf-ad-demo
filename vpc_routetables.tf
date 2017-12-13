@@ -21,10 +21,9 @@ resource "aws_route_table" "rtb_pvt_az1" {
   vpc_id = "${aws_vpc.vpc_myapp.id}"
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = "${aws_nat_gateway.natgw_az1.id}"
   }
-
 }
 
 resource "aws_route_table_association" "rtb_dmz_to_priv_az1" {
@@ -36,7 +35,7 @@ resource "aws_route_table" "rtb_pvt_az2" {
   vpc_id = "${aws_vpc.vpc_myapp.id}"
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = "${aws_nat_gateway.natgw_az2.id}"
   }
 }

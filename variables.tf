@@ -13,6 +13,7 @@ variable "vpc_cidr" {
 variable "subnet_dmz_cidr_az1" {
   default = "10.1.3.0/24"
 }
+
 variable "subnet_dmz_cidr_az2" {
   default = "10.1.4.0/24"
 }
@@ -20,6 +21,7 @@ variable "subnet_dmz_cidr_az2" {
 variable "subnet_priv_cidr_az1" {
   default = "10.1.1.0/24"
 }
+
 variable "subnet_priv_cidr_az2" {
   default = "10.1.2.0/24"
 }

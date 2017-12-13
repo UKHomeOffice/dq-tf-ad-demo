@@ -7,7 +7,8 @@ resource "aws_iam_instance_profile" "instance_profile_adwriter" {
 }
 
 resource "aws_iam_role" "iam_role_adwriter" {
-  path               = "/"
+  path = "/"
+
   assume_role_policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -26,7 +27,8 @@ EOF
 }
 
 resource "aws_iam_role_policy" "policy_allow_all_ssm" {
-  role   = "${aws_iam_role.iam_role_adwriter.id}"
+  role = "${aws_iam_role.iam_role_adwriter.id}"
+
   policy = <<EOF
 {
     "Version": "2012-10-17",

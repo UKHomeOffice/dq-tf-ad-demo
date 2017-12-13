@@ -3,7 +3,6 @@
 #
 
 resource "aws_security_group" "secgroup_adwriter" {
-
   vpc_id = "${aws_vpc.vpc_myapp.id}"
 
   ingress {
@@ -35,5 +34,4 @@ resource "aws_security_group" "secgroup_adwriter" {
       "0.0.0.0/0",
     ]
   }
-
 }

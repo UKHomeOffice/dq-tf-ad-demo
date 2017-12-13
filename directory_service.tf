@@ -11,5 +11,6 @@ resource "aws_directory_service_directory" "myapp_ad" {
       "${aws_subnet.subnet_priv_az2.id}",
     ]
   }
+
   type = "MicrosoftAD"
 }

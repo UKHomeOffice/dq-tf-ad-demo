@@ -16,5 +16,16 @@ When its all done it should output the addresses for the machines it's made and 
 The Windows box you can RDP to, the linux machines you can ssh to like: `ssh ec2-XXX-XXX-XXX-XXX.eu-west-2.compute.amazonaws.com -l admin@myapp.com`
 
 
+## TODO
+- [ ] Another VPC with a machine in it that auths over a peer to the AD
+- [x] RHEL machine auto provisioning
+- [x] Ubuntu machine auto provisioning
+- [ ] Make a module to a lot of this heavy lifting and reference it here
+
+## Things you should do
+- Keep the admin credentials in KMS rather than terraform state
+- Make an AD user with limited access that can just add computers to the AD rather than use the admin account which is considered bad practice.
+- Find someway to remove computers from the AD when they go away
+
 ## Acknowledgements
 This is based on [Tony P. Hadimulyono](https://github.com/tonyprawiro)'s [Blog post](https://medium.com/@tonyprawiro/deploying-windows-ad-in-aws-using-aws-directory-service-and-terraform-6141c819592f) and [GitHub Repo](https://github.com/tonyprawiro/aws-msad-terraform)

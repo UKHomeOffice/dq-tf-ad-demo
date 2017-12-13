@@ -52,7 +52,7 @@ EOF
 
 resource "aws_instance" "ubuntu" {
   instance_type          = "t2.micro"
-  ami                    = "${data.aws_ami.rhel.id}"
+  ami                    = "${data.aws_ami.ubuntu.id}"
   subnet_id              = "${aws_subnet.subnet_dmz_az1.id}"
 
   vpc_security_group_ids = [
@@ -61,7 +61,8 @@ resource "aws_instance" "ubuntu" {
 
   user_data              = <<EOF
 #!/bin/bash
-apt-get -y install sssd realmd krb5-workstation adcli samba-common-tools expect
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y install sssd realmd krb5-user samba-common expect adcli sssd-tools  packagekit
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl reload sshd
 systemctl start sssd.service

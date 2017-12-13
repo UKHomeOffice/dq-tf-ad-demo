@@ -113,12 +113,33 @@ EOF
   ]
 }
 
+resource "aws_instance" "another_win" {
+  instance_type = "t2.nano"
+  ami           = "${data.aws_ami.win.id}"
+
+  iam_instance_profile = "${aws_iam_instance_profile.instance_profile_adwriter.name}"
+  subnet_id            = "${aws_subnet.another_subnet_dmz_az1.id}"
+
+  vpc_security_group_ids = [
+    "${aws_security_group.another.id}",
+  ]
+}
+
+resource "aws_ssm_association" "another_win" {
+  name        = "${aws_ssm_document.myapp_dir_default_doc.name}"
+  instance_id = "${aws_instance.another_win.id}"
+}
+
 output "Red Hat in another VPC Address" {
   value = "${aws_instance.another_rhel.public_dns}"
 }
 
 output "Ubuntu in another VPC Address" {
   value = "${aws_instance.another_ubuntu.public_dns}"
+}
+
+output "Windows in another VPC Address" {
+  value = "${aws_instance.another_win.public_dns}"
 }
 
 resource "aws_vpc_peering_connection" "peering" {

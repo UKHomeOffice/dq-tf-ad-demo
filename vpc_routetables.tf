@@ -22,7 +22,7 @@ resource "aws_route_table" "rtb_pvt_az1" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_nat_gateway.natgw_az1.id}"
+    nat_gateway_id = "${aws_nat_gateway.natgw_az1.id}"
   }
 
 }
@@ -37,7 +37,7 @@ resource "aws_route_table" "rtb_pvt_az2" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_nat_gateway.natgw_az2.id}"
+    nat_gateway_id = "${aws_nat_gateway.natgw_az2.id}"
   }
 }
 

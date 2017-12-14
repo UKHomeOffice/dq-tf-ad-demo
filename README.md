@@ -21,7 +21,7 @@ The Windows box you can RDP to, the linux machines you can ssh to like: `ssh ec2
 - [x] Another VPC with a windows machine that auths over the peering
 - [x] RHEL machine auto provisioning
 - [x] Ubuntu machine auto provisioning
-- [ ] Make a module to a lot of this heavy lifting and reference it here
+- [x] [Make a module to a lot of this heavy lifting and reference it here](https://github.com/UKHomeOffice/dq-tf-ad)
 
 ## Things you should do
 - Keep the admin credentials in KMS rather than terraform state
